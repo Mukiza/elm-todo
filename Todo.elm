@@ -69,21 +69,21 @@ step action state =
           { state | field <- str }
 
       EditingTask id isEditing ->
-          let update task  = if task.id == id then { task | editing <- isEditing } else task
+          let update t  = if t.id == id then { t | editing <- isEditing } else t
           in { state | tasks <- map update state.tasks }
 
       Delete id ->
-          { state | tasks <- filter (\task -> task.id /= id) state.tasks }
+          { state | tasks <- filter (\t -> t.id /= id) state.tasks }
 
       DeleteComplete ->
           { state | tasks <- filter (not << .completed) state.tasks }
 
       Check id isCompleted ->
-          let update task = if task.id == id then { task | completed <- isCompleted } else task
+          let update t = if t.id == id then { t | completed <- isCompleted } else t
           in { state | tasks <- map update state.tasks }
 
       CheckAll isCompleted ->
-          let update task = { task | completed <- isCompleted }
+          let update t = { t | completed <- isCompleted }
           in { state | tasks <- map update state.tasks }
 
       ChangeVisibility visibility ->
