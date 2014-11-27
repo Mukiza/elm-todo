@@ -1,0 +1,10 @@
+{
+    "summary": "A simple follow through of the todoMvc app",
+    "repository": "https://github.com/Mukiza/elm-todo.git",
+    "dependencies": {"evancz/elm-html": "0.2"},
+    "exposed-modules": [],
+    "version": "0.1.0",
+    "elm-version": "0.13",
+    "license": "BSD3",
+    "description": ""
+}
